@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #333 0%, #555 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+        width: 100%;
+    max-width: 420px;
+    
+    margin: 0px auto; /* centraliza horizontalmente */
+    padding: 32px 28px;
+
+    background: #ffffff20; /* efeito vidro */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 16px;
+
+    box-shadow: 
+        0 10px 25px #00000035,
+        inset 0 0 0 1px #ffffff10;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    color: #fff;
+    overflow: hidden;
+}
+
+.header {
+    width: calc(100% + 56px); /* compensa o padding lateral do container */
+    margin: -32px -28px 16px -28px; /* encaixa perfeitamente no topo */
+    padding: 26px 22px 18px 22px;
+
+    /* Mesmo vidro, só um pouco mais escuro */
+    background: #00000030;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Borda sutil igual ao container */
+    border-bottom: 1px solid #ffffff50;
+
+    /* Segue exatamente o arredondamento */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+
+    /* Sombra bem leve só pra separar do conteúdo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.header h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    position:relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    width: 100%;
+    padding: 10px 12px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    background: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+
+    font-size: 0.95rem;
+
+    outline: none;
+}
+
+/* Placeholder mais bonito */
+.form-control input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* Efeito ao focar */
+.form-control input:focus {
+    border-color: #f7c842;
+    background: rgba(0, 0, 0, 0.6);
+
+    box-shadow: 
+        0 0 0 2px rgba(247, 200, 66, 0.35),
+        0 8px 20px rgba(0, 0, 0, 0.5);
+
+    transform: translateY(-1px);
+}
+
+.form-control i {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.form-control small {
+    margin-top: 6px;
+
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    color: #ff5c5c;
+    
+    opacity: 0.9;
+
+    /* transition: 
+        visibility 0.2s ease,
+        opacity 0.2s ease,
+        transform 0.2s ease; */
+
+    visibility: hidden; 
+    transform: translateY(-4px);
+}
+
+
+.form button {
+    background-color: #fc00ff;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.form-control.error input{
+    border-color: #e74c3c;
+}
+
+.form-control.success input{
+    border-color: #2ecc71;
+
+}
+
+.form-control.success i.fa-check{
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation{
+    color: #e74c3c;
+    visibility: visible;
+    position: absolute;
+    top: 45px;
+    right: 13.5px;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: e74c3c;
+}
